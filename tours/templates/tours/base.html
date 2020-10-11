@@ -17,8 +17,8 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            {% url 'departure' departure as departure_url %}
             <ul class="navbar-nav">{% for key, value in departures.items %}
+                {% url 'departure' key as departure_url %}
                 <li class="nav-item {% if departure_url == request.path %}active{% endif %}">
                     <a class="nav-link" href="{% url 'departure' key %}">{{ value }}</a>
                 </li>{% endfor %}
