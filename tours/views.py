@@ -56,12 +56,12 @@ class DepartureView(View):
 
 class TourView(View):
 
-    def get(self, request, id, *args, **kwargs):
+    def get(self, request, key, *args, **kwargs):
 
-        if id not in tours:
+        if key not in tours:
             raise Http404
 
-        tour = tours[id]
+        tour = tours[key]
 
         context = {
             'page_title': tour['title'] + ' ' + tour['stars'] + ' ★',
